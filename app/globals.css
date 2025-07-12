@@ -4,34 +4,6 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -56,6 +28,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
   }
 }
 
@@ -64,74 +37,54 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-zinc-900 text-white;
   }
 }
 
-/* BOSS FITNESS Custom Styles - Strict Dark Theme */
+/* Dark BOSS FITNESS Styles */
 @layer utilities {
-  .glow-red {
-    text-shadow: 0 0 15px rgba(220, 20, 60, 0.9), 0 0 30px rgba(220, 20, 60, 0.6);
-  }
-
-  .glow-white {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  }
-
-  .animate-pulse-slow {
-    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .bg-boss-black {
-    background: #000000;
-  }
-
-  .bg-boss-charcoal {
-    background: #1a1a1a;
-  }
-
-  .bg-boss-dark-gray {
-    background: #2a2a2a;
-  }
-
-  .bg-boss-medium-gray {
-    background: #4a4a4a;
-  }
-
-  .text-boss-red {
-    color: #dc143c;
-  }
-
-  .text-boss-red-dark {
-    color: #b71c1c;
-  }
-
-  .text-boss-red-electric {
-    color: #ff1744;
-  }
-
-  .border-boss-red {
-    border-color: #dc143c;
-  }
-
-  .border-glow-red {
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.4), inset 0 0 20px rgba(220, 20, 60, 0.1);
-  }
-
-  .hover-glow-red:hover {
-    box-shadow: 0 0 30px rgba(220, 20, 60, 0.6), inset 0 0 30px rgba(220, 20, 60, 0.2);
-    transform: scale(1.02);
-  }
-
-  .boss-gradient-red {
-    background: linear-gradient(135deg, #dc143c 0%, #b71c1c 50%, #ff1744 100%);
-  }
-
-  .boss-text-gradient {
-    background: linear-gradient(135deg, #ffffff 0%, #dc143c 50%, #ffffff 100%);
+  .text-gradient {
+    background: linear-gradient(135deg, #e53e3e 0%, #ff5252 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .shadow-modern {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-modern-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  }
+
+  .transition-modern {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .bg-gradient-modern {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #e53e3e, #ff5252) 1;
+  }
+
+  .bg-dark-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+  }
+
+  .bg-dark-section {
+    background: #0d0d0d;
+  }
+
+  .text-dark-muted {
+    color: #9e9e9e;
   }
 }
 
@@ -140,47 +93,46 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar - BOSS Theme */
+/* Custom scrollbar - Dark theme */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #dc143c, #b71c1c);
-  border-radius: 4px;
+  background: linear-gradient(to bottom, #e53e3e, #c62828);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #ff1744, #dc143c);
+  background: linear-gradient(to bottom, #ff5252, #e53e3e);
 }
 
-/* Selection styling - BOSS Theme */
+/* Selection styling */
 ::selection {
-  background: rgba(220, 20, 60, 0.4);
+  background: rgba(229, 62, 62, 0.3);
   color: #ffffff;
 }
 
-/* Focus styles - BOSS Theme */
+/* Focus styles */
 button:focus,
 input:focus,
 textarea:focus {
-  outline: 2px solid #dc143c;
+  outline: 2px solid #e53e3e;
   outline-offset: 2px;
-  box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
 }
 
-/* Button hover effects */
-.boss-button {
-  transition: all 0.3s ease;
+/* Modern button animations */
+.btn-modern {
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.boss-button::before {
+.btn-modern::before {
   content: "";
   position: absolute;
   top: 0;
@@ -191,66 +143,84 @@ textarea:focus {
   transition: left 0.5s;
 }
 
-.boss-button:hover::before {
+.btn-modern:hover::before {
   left: 100%;
 }
 
 /* Card hover effects */
-.boss-card {
+.card-modern {
   transition: all 0.3s ease;
-  position: relative;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
 }
 
-.boss-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+.card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  border-color: #e53e3e;
 }
 
-/* Text animations */
-@keyframes boss-pulse {
-  0%,
-  100% {
-    text-shadow: 0 0 10px rgba(220, 20, 60, 0.8);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(220, 20, 60, 1), 0 0 30px rgba(220, 20, 60, 0.8);
-  }
+/* Typography enhancements */
+.text-modern-heading {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #ffffff;
 }
 
-.boss-text-pulse {
-  animation: boss-pulse 2s ease-in-out infinite;
+.text-modern-body {
+  line-height: 1.6;
+  color: #9e9e9e;
 }
 
 /* Loading animations */
-@keyframes boss-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.boss-loading {
-  animation: boss-loading 1s linear infinite;
-}
-
-/* Particle effects */
-@keyframes boss-particle {
-  0% {
+@keyframes modern-fade-in {
+  from {
     opacity: 0;
-    transform: translateY(0) scale(0);
+    transform: translateY(20px);
   }
-  50% {
+  to {
     opacity: 1;
-    transform: translateY(-50px) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0);
+    transform: translateY(0);
   }
 }
 
-.boss-particle {
-  animation: boss-particle 2s ease-out infinite;
+.animate-modern-fade-in {
+  animation: modern-fade-in 0.6s ease-out;
+}
+
+/* Dark theme specific styles */
+.bg-dark-hero {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.bg-dark-section-alt {
+  background: #111111;
+}
+
+.text-dark-primary {
+  color: #ffffff;
+}
+
+.text-dark-secondary {
+  color: #e0e0e0;
+}
+
+.border-dark {
+  border-color: #2a2a2a;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }

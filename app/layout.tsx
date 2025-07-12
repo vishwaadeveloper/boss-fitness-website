@@ -11,7 +11,10 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: 'Boss Fitness',
   description: 'Created with next.js',
-  dev: 'vishwaa',
+  authors: [
+    {'name': 'Boss Fitness', url: 'https://bossfitness.com'},
+    {'name': 'Vishwaa', url: 'https://yourwebsite.com'}
+  ],
 }
 
 export default function RootLayout({
